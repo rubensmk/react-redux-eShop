@@ -1,8 +1,19 @@
 import React from 'react';
 import { MdShoppingBasket } from 'react-icons/md';
+import { useSelector } from 'react-redux';
+import { IState } from '../../store';
+import { ICartItem } from '../../store/modules/cart/types';
 import { Cart } from './styles';
 
 const CartButton = (): JSX.Element => {
+  const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
+  let totalQuantity = 0;
+
+  cart.map(item => {
+    totalQuantity += item.quantity;
+    return totalQuantity;
+  });
+
   return (
     <Cart to="/cart">
       <div className="icon">
@@ -10,7 +21,7 @@ const CartButton = (): JSX.Element => {
       </div>
       <div>
         <strong>My Cart</strong>
-        <span>2 products</span>
+        <span>{totalQuantity} products</span>
       </div>
     </Cart>
   );
