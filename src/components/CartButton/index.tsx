@@ -4,13 +4,13 @@ import { Cart } from './styles';
 
 const CartButton = (): JSX.Element => {
   return (
-    <Cart>
+    <Cart to="/cart">
       <div className="icon">
         <MdShoppingBasket size={36} color="#FFAC00" />
       </div>
       <div>
-        <strong>Meu carrinho</strong>
-        <span>2 produtos</span>
+        <strong>My Cart</strong>
+        <span>2 products</span>
       </div>
     </Cart>
   );

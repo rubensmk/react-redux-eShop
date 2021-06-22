@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Cart = styled.div`
+export const Cart = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
