@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import { IState } from '../../store';
 import { ICartItem } from '../../store/modules/cart/types';
+import { formatPrice } from '../../utils/formatPrice';
 
 import { CartItems, Container, Item } from './styles';
 
@@ -14,19 +15,23 @@ const Cart: React.FC = () => {
       <Header />
       <Container>
         <CartItems>
-          {cart.map(item => (
-            <Item>
-              <img
-                src={item.product.image}
-                alt={item.product.title}
-                style={{ width: 120, height: 120 }}
-              />
-              <strong>{item.product.title}</strong>
-              <span>{item.product.price}</span>
-              <p>{item.quantity}</p>
-              <h3>{(item.quantity * item.product.price).toFixed(2)}</h3>
-            </Item>
-          ))}
+          <h3>Cart</h3>
+          <div>
+            {cart.map(item => (
+              <Item>
+                <img src={item.product.image} alt={item.product.title} />
+                <div>
+                  <strong>{item.product.title}</strong>
+                  <section>
+                    <p>Quantidade: {item.quantity}</p>
+                    <span>{formatPrice(item.product.price)}</span>
+                  </section>
+                </div>
+                <h3>{formatPrice(item.quantity * item.product.price)}</h3>
+              </Item>
+            ))}
+          </div>
+          <h2>Total</h2>
         </CartItems>
       </Container>
     </>

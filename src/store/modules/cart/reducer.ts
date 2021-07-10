@@ -18,7 +18,6 @@ const cart: Reducer<ICartState | undefined> = (
     switch (action.type) {
       case ActionTypes.addProductToCartSuccess: {
         const { product } = action.payload;
-
         const productInCartIndex = draft.items.findIndex(
           item => item.product.id === product.id,
         );

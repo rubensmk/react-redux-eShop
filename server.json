@@ -1,30 +1,4 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "title": "Black Coat MockUp",
-      "price": 290.90,
-      "image": "https://slimages.macys.com/is/image/MCY/products/5/optimized/3921475_fpx.tif?op_sharpen=1&wid=700&hei=855&fit=fit,1"
-    },
-    {
-      "id": 2,
-      "title": "Sneakers MockUp",
-      "price": 500.00,
-      "image": "https://elements-cover-images-0.imgix.net/6e158932-cb02-4dcd-b601-b471fc9176b0?auto=compress&crop=edges&fit=crop&fm=jpeg&h=800&w=1200&s=6cbf20fc0d27f64d469ae6ab74ea3893"
-    },
-    {
-      "id": 3,
-      "title": "Training Shorts Mock",
-      "price": 59.90,
-      "image": "https://www.free-mockup.com/wp-content/uploads/edd/2019/04/Free-Training-Shorts-Mockup-01.jpg"
-    },
-    {
-      "id": 4,
-      "title": "Mug MockUp",
-      "price": 40.00,
-      "image": "https://mockuptree.com/wp-content/uploads/edd/2021/05/Free-Mug-Mockup-960x640.jpg"
-    }
-  ],
   "stock": [
     {
       "id": 1,
@@ -36,10 +10,74 @@
     },
     {
       "id": 3,
-      "quantity": 10
+      "quantity": 0
     },
     {
       "id": 4,
+      "quantity": 5
+    },
+    {
+      "id": 5,
+      "quantity": 5
+    },
+    {
+      "id": 6,
+      "quantity": 9
+    },
+    {
+      "id": 7,
+      "quantity": 5
+    },
+    {
+      "id": 8,
+      "quantity": 0
+    },
+    {
+      "id": 9,
+      "quantity": 5
+    },
+    {
+      "id": 10,
+      "quantity": 5
+    },
+    {
+      "id": 11,
+      "quantity": 0
+    },
+    {
+      "id": 12,
+      "quantity": 5
+    },
+    {
+      "id": 13,
+      "quantity": 5
+    },
+    {
+      "id": 14,
+      "quantity": 2
+    },
+    {
+      "id": 15,
+      "quantity": 1
+    },
+    {
+      "id": 16,
+      "quantity": 5
+    },
+    {
+      "id": 17,
+      "quantity": 5
+    },
+    {
+      "id": 18,
+      "quantity": 0
+    },
+    {
+      "id": 19,
+      "quantity": 5
+    },
+    {
+      "id": 20,
       "quantity": 5
     }
   ]

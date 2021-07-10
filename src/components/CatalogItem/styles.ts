@@ -1,5 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
+interface ButtonProps {
+  hasFailedStockCheck: boolean;
+}
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,46 +10,65 @@ export const Container = styled.div`
   align-items: center;
 
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: 20px 20px;
-  width: 300px;
-  height: 400px;
+  width: 280px;
+  height: 320px;
 
-  strong {
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    color: #383c6b;
-  }
   img {
-    width: 300px;
-    height: 280px;
-  }
-  div.buysection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-  }
-  span {
-    font-size: 28px;
-    color: #383c6b;
-  }
-  button {
-    margin-left: 40px;
-    border: 0;
-    background: #ffac00;
     width: 120px;
-    height: 40px;
-    border-radius: 5px;
-    color: #ffffff;
+    height: 140px;
+  }
+`;
 
-    transition: filter 0.2s;
+export const Title = styled.strong`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    &:hover {
-      filter: brightness(1.1);
-    }
+  width: 100%;
+  height: 90px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #383c6b;
+  margin-bottom: 10px;
+`;
+
+export const Button = styled.button<ButtonProps>`
+  margin-left: 40px;
+  border: 0;
+  background: #ffac00;
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  color: #ffffff;
+
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  ${props =>
+    props.hasFailedStockCheck &&
+    css`
+      background: #9999;
+      cursor: not-allowed;
+      &:hover {
+        filter: brightness(1);
+      }
+    `}
+`;
+
+export const BuySection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
+
+  span {
+    font-size: 22px;
+    color: #383c6b;
   }
 `;

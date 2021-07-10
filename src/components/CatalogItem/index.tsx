@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IProduct } from '../../store/modules/cart/types';
 import { addProductToCartRequest } from '../../store/modules/cart/actions';
 import { IState } from '../../store';
-import { Container } from './styles';
+import { Container, Title, BuySection, Button } from './styles';
+import { formatPrice } from '../../utils/formatPrice';
 
 interface CatalogItemProps {
   product: IProduct;
@@ -22,17 +23,18 @@ const CatalogItem: React.FC<CatalogItemProps> = ({ product }) => {
 
   return (
     <Container>
-      <strong>{product.title}</strong>
+      <Title>{product.title}</Title>
       <img src={product.image} alt={product.title} />
-      <div className="buysection">
-        <span>R${product.price}</span>
-        <button type="button" onClick={handleAddProductToCart}>
-          Comprar
-        </button>
-      </div>
-      {hasFailedStockCheck && (
-        <span style={{ color: 'red' }}> Falta do estoque</span>
-      )}
+      <BuySection>
+        <span>{formatPrice(product.price)}</span>
+        <Button
+          type="button"
+          onClick={handleAddProductToCart}
+          hasFailedStockCheck={hasFailedStockCheck}
+        >
+          {hasFailedStockCheck ? 'Esgotado' : 'Comprar'}
+        </Button>
+      </BuySection>
     </Container>
   );
 };

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import Axios from 'axios';
 import Header from '../../components/Header';
 
 import { IProduct } from '../../store/modules/cart/types';
 import CatalogItem from '../../components/CatalogItem';
-import api from '../../services/api';
 
 import { Catalog } from './styles';
 
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const [catalog, setCatalog] = useState<IProduct[]>([]);
 
   useEffect(() => {
-    api.get('products').then(response => {
+    Axios.get('https://fakestoreapi.com/products').then(response => {
       setCatalog(response.data);
     });
   }, []);
